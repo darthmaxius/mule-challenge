@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReactFlow from "react-flow-renderer";
 import TextArea from "./components/textarea";
 import Button from "./components/button";

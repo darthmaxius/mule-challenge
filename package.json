@@ -13,6 +13,13 @@
     "sass": "^1.49.8",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "prettier": "2.3.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint",
+    "*.{js,json,md,html,scss}": "prettier --write"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

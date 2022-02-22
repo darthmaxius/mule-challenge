@@ -1,0 +1,39 @@
+{
+  "env": {
+    "commonjs": true,
+    "jest": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": ["bragi", "prettier"],
+  "rules": {
+    "import/no-extraneous-dependencies": ["warn", { "devDependencies": ["**/*.test.js", "**/*.stories.js"] }],
+    "camelcase": "off",
+    "no-underscore-dangle": "warn",
+    "no-unused-vars": "warn",
+    "prefer-destructuring": "warn",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "react/destructuring-assignment": "warn",
+    "react/no-array-index-key": "warn",
+    "react/sort-comp": "warn",
+    "react/forbid-prop-types": "warn",
+    "react/no-unused-state": "warn",
+    "no-nested-ternary": "warn",
+    "no-shadow": "warn",
+    "no-undef": "warn",
+    "arrow-body-style": "warn",
+    "dot-notation": "warn",
+    "no-use-before-define": "warn",
+    "spaced-comment": "warn",
+    "import/prefer-default-export": "warn",
+    "import/newline-after-import": "warn",
+    "import/first": "warn",
+    "object-shorthand": "warn"
+  }
+}
