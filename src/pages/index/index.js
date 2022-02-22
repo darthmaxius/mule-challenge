@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactFlow from 'react-flow-renderer';
-import TextArea from './components/textarea';
-import Button from './components/button';
+import TextArea from '../../components/textarea';
+import Button from '../../components/button';
 
 import './App.scss';
 
@@ -29,7 +29,7 @@ export default function App() {
             <h2 className="layout-panel__resume-title">Resume</h2>
             <ul className="layout-panel__resume-list">
               {resume.map((line, key) => (
-                <li key={key}>
+                <li className="layout-panel__resume-list-item" key={key}>
                   {line.text} <b>{line.validated}</b>
                 </li>
               ))}

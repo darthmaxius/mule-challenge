@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-function Button({
-  children,
-  setElementsHandler,
-  textAreaValue,
-  className,
-  setResumeHandler,
-}) {
+function Button({ children, setElementsHandler, textAreaValue, className, setResumeHandler }) {
   const [counter, setCounter] = useState(0);
 
   function formatString2Elements(input, outputs, uniqueElements) {
@@ -42,8 +36,8 @@ function Button({
         id: `${counter}.e-${input}-e-${output}`,
         source: `${counter}.e-${input}`,
         target: `${counter}.e-${output}`,
-        arrowHeadType: "arrowclosed",
-        type: "step",
+        arrowHeadType: 'arrowclosed',
+        type: 'step',
       });
     });
 
@@ -59,50 +53,44 @@ function Button({
     const text = textAreaValue.trim();
     const resume = [];
 
-    const lines = text.toUpperCase().split("\n");
+    const lines = text.toUpperCase().split('\n');
 
     const elements = [];
 
     lines.map((line) => {
-      const auxInputOutputs = line.split("DEPENDS");
+      const auxInputOutputs = line.split('DEPENDS');
 
       if (auxInputOutputs.length !== 2) {
         resume.push({
           text: line,
-          validated: "INVALID FORMAT",
+          validated: 'INVALID FORMAT',
         });
         return console.log(`THIS LINE ONLY HAVE ONE DEPENDS`);
       }
 
-      const auxInput = auxInputOutputs[0].trim().split(" ");
-      const auxOutputs = auxInputOutputs[1].trim().split(" ");
+      const auxInput = auxInputOutputs[0].trim().split(' ');
+      const auxOutputs = auxInputOutputs[1].trim().split(' ');
 
-      console.log("INPUTS: ", auxInput, auxOutputs);
+      console.log('INPUTS: ', auxInput, auxOutputs);
 
-      if (
-        auxInput.length > 1 ||
-        auxOutputs.length < 1 ||
-        auxOutputs[0] === ""
-      ) {
+      if (auxInput.length > 1 || auxOutputs.length < 1 || auxOutputs[0] === '') {
         resume.push({
           text: line,
-          validated: "INVALID LINE TO DRAW",
+          validated: 'INVALID LINE TO DRAW',
         });
-        return console.log(`INVALID LINE TO DRAW "${line}"`);
+        return console.log(`INVALID FORMAT LINE TO DRAW "${line}"`);
       }
 
       console.log(`VALID STRING "${text}"`);
-      elements.push(
-        ...formatString2Elements(auxInput[0], auxOutputs, uniqueElements)
-      );
+      elements.push(...formatString2Elements(auxInput[0], auxOutputs, uniqueElements));
 
       resume.push({
         text: line,
-        validated: "OK",
+        validated: 'OK',
       });
     });
 
-    console.log("DIBUJO CON VALORES: ", elements, uniqueElements);
+    console.log('DIBUJO CON VALORES: ', elements, uniqueElements);
 
     setElementsHandler(elements);
     setResumeHandler(resume);
