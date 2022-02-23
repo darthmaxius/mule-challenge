@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index Test Happy render 1`] = `
+exports[`Index Happy render 1`] = `
 <DocumentFragment>
   <div
     class="layout"

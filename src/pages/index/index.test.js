@@ -3,7 +3,7 @@ import App from '.';
 
 jest.mock('react-flow-renderer', () => () => <div />);
 
-describe('Index Test', () => {
+describe('Index', () => {
   const setup = () => {
     const utils = render(<App />);
     const textarea = utils.getByLabelText('panel-textarea');
