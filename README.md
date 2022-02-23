@@ -1,4 +1,8 @@
 # Getting Started with Challenge
+
+This challenge was make with node14.16 and npm6. Please check your version of these tools.
+I used react-flow-renderer for graphs. In my opinion, this dependency it's a best option to take this test.
+
 ## Available Scripts
 
 In the project directory, you can run:
