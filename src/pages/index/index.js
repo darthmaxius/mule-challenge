@@ -3,7 +3,7 @@ import ReactFlow from 'react-flow-renderer';
 import TextArea from '../../components/textarea';
 import Button from '../../components/button';
 
-import './App.scss';
+import './index.scss';
 
 export default function App() {
   const [elements, setElements] = useState([]);

@@ -1,50 +1,8 @@
 import React, { useState } from 'react';
+import formatString2Elements from '../../helpers/formatString2Elements';
 
 function Button({ children, setElementsHandler, textAreaValue, className, setResumeHandler }) {
   const [counter, setCounter] = useState(0);
-
-  function formatString2Elements(input, outputs, uniqueElements) {
-    const newElements = [];
-
-    if (uniqueElements.indexOf(input) === -1) {
-      uniqueElements.push(input);
-
-      newElements.push({
-        id: `${counter}.e-${input}`,
-        data: { label: input },
-        position: { x: 250, y: 25 },
-      });
-    }
-
-    outputs.map((output, key) => {
-      const position = key * 10;
-      const positionX = 100 + position;
-      const positionY = 125 + position;
-
-      if (uniqueElements.indexOf(output) === -1) {
-        uniqueElements.push(output);
-
-        newElements.push({
-          id: `${counter}.e-${output}`,
-          // you can also pass a React component as a label
-          data: { label: output },
-          position: { x: positionX, y: positionY },
-        });
-      }
-
-      newElements.push({
-        id: `${counter}.e-${input}-e-${output}`,
-        source: `${counter}.e-${input}`,
-        target: `${counter}.e-${output}`,
-        arrowHeadType: 'arrowclosed',
-        type: 'step',
-      });
-    });
-
-    setCounter(counter + 1);
-
-    return newElements;
-  }
 
   function insertText(e) {
     const uniqueElements = [];
@@ -82,7 +40,7 @@ function Button({ children, setElementsHandler, textAreaValue, className, setRes
       }
 
       console.log(`VALID STRING "${text}"`);
-      elements.push(...formatString2Elements(auxInput[0], auxOutputs, uniqueElements));
+      elements.push(...formatString2Elements(auxInput[0], auxOutputs, uniqueElements, counter, setCounter));
 
       resume.push({
         text: line,
@@ -90,10 +48,10 @@ function Button({ children, setElementsHandler, textAreaValue, className, setRes
       });
     });
 
-    console.log('DIBUJO CON VALORES: ', elements, uniqueElements);
-
     setElementsHandler(elements);
     setResumeHandler(resume);
+
+    return console.log('DRAW WITH VALUES: ', elements, uniqueElements);
   }
 
   return (

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index Test Happy render 1`] = `
+<DocumentFragment>
+  <div
+    class="layout"
+  >
+    <div
+      class="layout-panel"
+    >
+      <div
+        class="layout-panel__inputs"
+      >
+        <textarea
+          class="layout-panel__inputs layout-panel__inputs-textarea"
+        />
+        <button
+          class="layout-panel__inputs layout-panel__inputs-button"
+        >
+          Draw
+        </button>
+      </div>
+    </div>
+    <div
+      class="layout-graph"
+    >
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;
