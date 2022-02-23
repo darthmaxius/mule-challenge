@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactFlow from 'react-flow-renderer';
 import TextArea from '../../components/textarea';
-import Button from '../../components/button';
+import Button from './button-wrappered';
 
 import './index.scss';
 
@@ -14,7 +14,10 @@ export default function App() {
     <div className="layout">
       <div className="layout-panel">
         <div className="layout-panel__inputs">
-          <TextArea className="layout-panel__inputs layout-panel__inputs-textarea" hanlderApp={setTextAreaValue} />
+          <TextArea
+            className="layout-panel__inputs layout-panel__inputs-textarea"
+            hanlderApp={setTextAreaValue}
+          />
           <Button
             className="layout-panel__inputs layout-panel__inputs-button"
             textAreaValue={textAreaValue}
@@ -26,7 +29,7 @@ export default function App() {
         </div>
         {resume.length > 0 && (
           <div className="layout-panel__resume">
-            <h2 className="layout-panel__resume-title">Resume</h2>
+            <h2 className="layout-panel__resume-title">Summary</h2>
             <ul className="layout-panel__resume-list">
               {resume.map((line, key) => (
                 <li className="layout-panel__resume-list-item" key={key}>

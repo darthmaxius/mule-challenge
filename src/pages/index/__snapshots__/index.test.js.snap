@@ -12,9 +12,11 @@ exports[`Index Test Happy render 1`] = `
         class="layout-panel__inputs"
       >
         <textarea
+          aria-label="panel-textarea"
           class="layout-panel__inputs layout-panel__inputs-textarea"
         />
         <button
+          aria-label="panel-button"
           class="layout-panel__inputs layout-panel__inputs-button"
         >
           Draw
