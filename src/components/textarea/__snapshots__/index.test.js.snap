@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Render 1`] = `
+<DocumentFragment>
+  <textarea
+    aria-label="panel-textarea"
+    class="test"
+  />
+</DocumentFragment>
+`;
