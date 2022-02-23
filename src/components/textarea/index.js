@@ -1,9 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Textarea({ hanlderApp, className }) {
+function Textarea({ className, handlerTextarea }) {
   function setValueInHandler(e) {
-    hanlderApp(e.target.value);
+    handlerTextarea(e.target.value);
   }
 
   return <textarea aria-label="panel-textarea" className={className} onChange={setValueInHandler} />;
 }
+
+Textarea.propTypes = {
+  class: PropTypes.string,
+  handlerTextarea: PropTypes.func.isRequired,
+};
+
+export default Textarea;

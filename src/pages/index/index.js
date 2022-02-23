@@ -14,7 +14,7 @@ export default function App() {
     <div className="layout">
       <div className="layout-panel">
         <div className="layout-panel__inputs">
-          <TextArea className="layout-panel__inputs layout-panel__inputs-textarea" hanlderApp={setTextAreaValue} />
+          <TextArea className="layout-panel__inputs layout-panel__inputs-textarea" handlerTextarea={setTextAreaValue} />
           <Button
             className="layout-panel__inputs layout-panel__inputs-button"
             textAreaValue={textAreaValue}
