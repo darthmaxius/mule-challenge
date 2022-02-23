@@ -35,8 +35,6 @@ code {
 
   &__inputs {
     font-size: 16px;
-    // Capitalized to prevent Sass
-    // thinking it's the Sass max()
     font-size: Max(16px, 1em);
     font-family: inherit;
     padding: 0.25em 0.5em;
@@ -69,6 +67,12 @@ code {
       &-item {
         padding-top: 4px;
         padding-bottom: 4px;
+        display: flex;
+        justify-content: space-between;
+
+        &__bold{
+          padding-left: 8px;
+        }
       }
     }
   }

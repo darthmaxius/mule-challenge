@@ -14,10 +14,7 @@ export default function App() {
     <div className="layout">
       <div className="layout-panel">
         <div className="layout-panel__inputs">
-          <TextArea
-            className="layout-panel__inputs layout-panel__inputs-textarea"
-            hanlderApp={setTextAreaValue}
-          />
+          <TextArea className="layout-panel__inputs layout-panel__inputs-textarea" hanlderApp={setTextAreaValue} />
           <Button
             className="layout-panel__inputs layout-panel__inputs-button"
             textAreaValue={textAreaValue}
@@ -33,7 +30,7 @@ export default function App() {
             <ul className="layout-panel__resume-list">
               {resume.map((line, key) => (
                 <li className="layout-panel__resume-list-item" key={key}>
-                  {line.text} <b>{line.validated}</b>
+                  {line.text} <b className="layout-panel__resume-list-item__bold">{line.validated}</b>
                 </li>
               ))}
             </ul>
